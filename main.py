@@ -1,8 +1,9 @@
 def add_everything_up(a, b):
-    if (isinstance(a, str) and isinstance(b, (int, float))) or (isinstance(b, str) and isinstance(a, (int, float))):
-        return str(a) + str(b)
-    else:
+
+    try:
         return a + b
+    except TypeError:
+        return str(a) + str(b)
 
 
 print(add_everything_up(123.456, 'строка'))
